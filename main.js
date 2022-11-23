@@ -1,22 +1,69 @@
-let btnref = document.querySelectorAll("buttion-option");
+let btnref = document.querySelectorAll(".button-option.grid");
 let popupref = document.querySelector(".popup");
  let newgame =  document.getElementById("new-game"); 
  let restartbtn = document.getElementById ("restart");
  let msgref = document.getElementById ("message");
+
+
+
+
  //winning patern array
   let winingpatern = [
-[0 ,1 ,2]
-[0 ,3 ,6]
-[2 ,5 ,8]
-[6 ,7 ,8]
-[3 ,4 ,5]
-[1 ,4 ,7]
-[0 ,4 ,8]
-[2 ,4 ,6]
-  ];
+[0 ,1 ,2],
+[0 ,3 ,6],
+[2 ,5 ,8],
+[6 ,7 ,8],
+[3 ,4 ,5],
+[1 ,4 ,7],
+[0 ,4 ,8],
+[2 ,4 ,6],
+];
 //player `x` plays first
 
 let xTurn = true;
  let count =0;
+ 
+ //win logic 
+const Winchecker = () => {
+for (let i of winingpatern ){
+let [ element1, element2, element3 ] = 
+[btnref = [i[0]] .innerText, 
+btnref[i[1]] .innerText,
+btnref[i[2]] .innerText,
+];
+//check if element are filled 
+//if 3 items are same and would give win as would
+if (element1 != "" && element2 != "" & element3 !=""){
+if (element1== element2 == element3){
+  
+}
+}
+}
 
- // display X/O on click
+}
+
+
+ //display X/O on click 
+ btnref.forEach((element)=>{
+element.addEventListener("click",() => {
+  if (xTurn) {
+    xTurn = false;
+    //display X 
+    element.innerText = "X";
+    element.disabled = true;
+  }
+  else {
+    xTurn = true
+    //display O
+    element.innerText = ("O");
+    element.disabled = true;
+
+  } 
+  count =+ 1;
+  if(count === 9){
+     //its a draw since there there are totale of 9 boxes 
+  } 
+  //check for win
+  Winchecker (); 
+})
+})
