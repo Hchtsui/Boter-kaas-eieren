@@ -22,20 +22,61 @@ let popupref = document.querySelector(".popup");
 
 let xTurn = true;
  let count =0;
+
+ const disabledbuttons = () => {
+  btnref.forEach ((element) => element.disabled = true);
+  popupref.classList.remove("hide");
+ }
+
+ //enable all buttons
+
+ const enablebuttons = (letter) => {
+  btnref.forEach ((element) => {
+    element.innerText =""
+    element.disabled = "flase";
+  });
+  popupref.classList.add("hide");
+ }
+
+ // this function is executed when a player wins
+ const winFunction = (letter) => {
+  disabledbuttons ();
+  if (letter == "x"){
+    msgref.innerHTML = "&#x1F389; <br> 'x' wins"
+  } else {
+    msgref.innerHTML = "&#x1F389; <br> 'o' wins"
+  }
+ };
+
+ newgame.addEventListener ("click", () => {
+  count = 0;
+  enablebuttons ();
+ });
+
+ restartbtn.addEventListener("click" , () => {
+  count = 0;
+  enablebuttons ();
+ });
  
+const  nothing = () => {
+  disabledbuttons();
+
+};
+
  //win logic 
 const Winchecker = () => {
-for (let i of winingpatern ){
-let [ element1, element2, element3 ] = 
-[btnref = [i[0]] .innerText, 
+for (let i of winingpatern ) {
+let [ element1, element2, element3 ] =  [
+btnref[i[0]] .innerText, 
 btnref[i[1]] .innerText,
 btnref[i[2]] .innerText,
 ];
 //check if element are filled 
 //if 3 items are same and would give win as would
-if (element1 != "" && element2 != "" & element3 !=""){
-if (element1== element2 == element3){
+if (element1 != "" && (element2 != "") & (element3 !="")){
+if (element1 == element2 && element2 == element3) {
   
+  winFunction (element1);
 }
 }
 }
