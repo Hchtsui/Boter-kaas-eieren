@@ -1,8 +1,8 @@
 let btnref = document.querySelectorAll(".button-option.grid");
 let popupref = document.querySelector(".popup");
- let newgame =  document.getElementById("new-game"); 
- let restartbtn = document.getElementById ("restart");
- let msgref = document.getElementById ("message");
+ let newgame =  document.querySelector(".new-game"); 
+ let restartbtn = document.querySelector(".restart");
+ let msgref = document.querySelector (".message");
 
 
 
@@ -51,11 +51,13 @@ let xTurn = true;
  newgame.addEventListener ("click", () => {
   count = 0;
   enablebuttons ();
+  location.reload();
  });
 
  restartbtn.addEventListener("click" , () => {
   count = 0;
   enablebuttons ();
+  location.reload();
  });
  
 const  nothing = () => {
@@ -91,13 +93,13 @@ element.addEventListener("click",() => {
     xTurn = false;
     //display X 
     element.innerText = "X";
-    element.disabled = true;
+    element.disabled = false;
   }
   else {
     xTurn = true
     //display O
     element.innerText = ("O");
-    element.disabled = true;
+    element.disabled = false;
 
   } 
   count =+ 1;
