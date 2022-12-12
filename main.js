@@ -10,7 +10,7 @@ let popupref = document.querySelector(".popup");
  //winning patern array
   let winingpatern = [
 [0 ,1 ,2],
-[0 ,3 ,6],
+[0 ,3 ,6], 
 [2 ,5 ,8],
 [6 ,7 ,8],
 [3 ,4 ,5],
@@ -30,7 +30,7 @@ let xTurn = true;
 
  //enable all buttons
 
- const enablebuttons = (letter) => {
+ const enablebuttons = (le) => {
   btnref.forEach ((element) => {
     element.innerText =""
     element.disabled = "flase";
