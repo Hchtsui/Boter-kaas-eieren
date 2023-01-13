@@ -3,10 +3,10 @@
 }
 
 body {
-    overflow: hidden;
     height: 100vh;
     background-image: url(/img/tree-736885__340.jpeg);
     background-size: 100%;
+    overflow: hidden;
     
 }
 
@@ -18,9 +18,13 @@ html {
     width: 600px;
     height: 600px;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 10px;
     display: grid;
     grid-template: repeat(3, 1fr) repeat(3, 1fr);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
 
 .grid-container {
@@ -55,7 +59,7 @@ html {
 }
 
 .popup{
-    background: linear-gradient(135deg, #8052ec, #d161ff);
+    background-image: url(/img/tree-736885__340.jpeg);
     height: 100%;
     width: 100%;
     position: absolute;
@@ -66,6 +70,7 @@ html {
     flex-direction: column;
     gap: 1em;
     font-size: 12vmin;
+
 }
 
 .new-game {
