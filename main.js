@@ -88,12 +88,12 @@ btnRef.forEach((element) => {
     if (xTurn) {
       xTurn = false;
       //Display X
-      element.innerText = "x";
+      element.innerText = "O";
       element.disabled = true;
     } else {
       xTurn = true;
       //Display Y
-      element.innerText = "o";
+      element.innerText = "X";
       element.disabled = true;
     }
     //Increment count on each click
