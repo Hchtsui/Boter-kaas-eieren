@@ -19,13 +19,16 @@ let xTurn = true;
 let count = 0;
 
 //Disable All Buttons
+//The Element.classList is a read-only property that returns a live DOMTokenList
+
 const disableButtons = () => {
   btnRef.forEach((element) => (element.disabled = true));
   //enable popup
   popupRef.classList.remove("hide");
 };
 
-//Enable all buttons (For New Game and Restart)
+//Enable all buttons (For New Game and Restart  elements stand als for a parameter)
+
 const enableButtons = () => {
   btnRef.forEach((element) => {
     element.innerText = "";
@@ -103,7 +106,7 @@ btnRef.forEach((element) => {
     }
     //Check for win on every click
     winChecker();
-    
+
   });
 });
 //Enable Buttons and disable popup on page load
